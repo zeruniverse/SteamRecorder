@@ -11,13 +11,16 @@ if(!$link) {die("can't connect to database");}
   <title><?php echo $RSS_TITLE;?></title>
   <link><?php echo $RSS_LINK;?></link>
   <description>Track Steam Play Time. Track How Life Is Ruined.</description>
+  <language>en</language>
+  <generator>SteamRecorder</generator>
+  <ttl>60</ttl>
 <?php
-	$sql = "SELECT * FROM `steamdata` order by id desc limit 30;";
+	$sql = "SELECT id,type,game,UNIX_TIMESTAMP(time) as time FROM `steamdata` order by id desc limit 30;";
 	$res = sqlquery($sql,$link);
 	while ($i = $res->fetch(PDO::FETCH_ASSOC)){ 
 		echo '<item>';
-		if(int($i['type'])==0) {
-			$asql = "select time from steamdata where id = ?";
+		if((int)$i['type']==0) {
+			$asql = "select UNIX_TIMESTAMP(time) as time from steamdata where id = ?";
 			$ares = sqlexec($asql,array((int)$i['id']-1),$link);
 			$oldt = $ares->fetch(PDO::FETCH_ASSOC);
 			$tdiff = (int)$i['time']-(int)$oldt['time'];
@@ -42,8 +45,10 @@ if(!$link) {die("can't connect to database");}
 		}
 		echo '<title>'.$title.'</title>';
 		echo '<link>'.$RSS_LINK.'</link>';
+		echo '<description>'.$title.'</description>';
 		echo '<pubDate>'.gmdate(DATE_RSS, (int)$i['time']).'</pubDate>';
-		echo'</item>';
+		echo '<guid isPermaLink="false">'.(string)$i['id'].'</guid>';
+		echo '</item>';
 	}
 ?>
 	
