@@ -7,12 +7,12 @@ import re
 
 # CONFIGURATION FIELD
 checkFrequency = 180
+#check every k seconds
 dbhost = 'localhost'
 dbname = 'steam'
 dbuser = 'root'
 dbpass = '123456'
 geturl = 'https://steamcommunity.com/id/zzy8200/'
-#check every k seconds
 # STOP EDITING HERE
 
 class HTTPClient:
@@ -35,7 +35,7 @@ def insertrec(dbcursor,lastgame,typet):
 	dbcursor.execute('SELECT max(id) FROM steamdata')
 	result = dbcursor.fetchone()
 	mid = 1
-	if result is not None:
+	if result is not None and result[0] is not None:
 		mid = int(result[0]) + 1
 	dbcursor.execute("INSERT INTO steamdata VALUES (%s, %s, %s, CURRENT_TIMESTAMP)",(mid,typet,lastgame))
 
