@@ -11,7 +11,7 @@ Record hours I wasted on Steam. So I know how my life is ruined.
 v0.1  
    
 #Release  
-Download [Release](https://github.com/zeruniverse/SteamRecorder/releases/download/v0.1)  
+Download [Release](https://github.com/zeruniverse/SteamRecorder/releases/latest)  
   
 #Features  
 + A python web crawler to crawl real-time data from steam.    
