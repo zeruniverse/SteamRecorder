@@ -1,13 +1,19 @@
-#SteamRecorder  
+SteamRecorder
+========================
+[![Build Status](https://travis-ci.org/zeruniverse/SteamRecorder.svg?branch=master)](https://travis-ci.org/zeruniverse/SteamRecorder)
+![Release](https://img.shields.io/github/release/zeruniverse/SteamRecorder.svg)
+![Environment](https://img.shields.io/badge/python-2.6, 2.7-blue.svg)
+![Environment](https://img.shields.io/badge/PHP-5.2+-blue.svg)
+![License](https://img.shields.io/github/license/zeruniverse/SteamRecorder.svg)  
 Record hours I wasted on Steam. So I know how my life is ruined.
 
-##Version  
+#Version  
 v0.1  
    
-##Release  
+#Release  
 Download [Release](https://github.com/zeruniverse/SteamRecorder/releases/download/v0.1)  
   
-##Features  
+#Features  
 + A python web crawler to crawl real-time data from steam.    
 + A RSS feeder. You can do a lot with [IFTTT](https://ifttt.com/).    
   For example:  
@@ -15,7 +21,7 @@ Download [Release](https://github.com/zeruniverse/SteamRecorder/releases/downloa
   
 + Web interface to search for history data.  
   
-##Usage  
+#Usage  
 + Download from Release.  
 + Create a database for SteamRecorder.  
 + Write database info into `crawler/crawler.py, LN 10-13` and `web/function/config.php LN 7-16`.
@@ -28,7 +34,7 @@ Download [Release](https://github.com/zeruniverse/SteamRecorder/releases/downloa
 + Put the `web` folder into your web server.
 + The RSS feeder should be accessible via `http://yourdomain.com/path/to/web/RSS.php`
 
-##Copyright  
+#Copyright  
 Jeffery Zhao  
 License: GNU GPL v3.0 or later  
 Copyrights of all JS libraries used in `web` folder are reserved by their authors.
