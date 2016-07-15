@@ -15,7 +15,7 @@ script:
   - echo 'still waiting'
   - sleep 500s
   - killall python
-  - cat qbot.log
+  - cat a.log
   - cat log.log
 after_script:
   - mysql -e "show databases;" -uroot -p123456
