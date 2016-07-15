@@ -44,7 +44,7 @@ if(!$link) {die("can't connect to database");}
 			$title = str_replace("%s", $i['game'], $START_C);
 		}
 		echo '<title>'.$title.'</title>';
-		echo '<link>'.$RSS_LINK.'</link>';
+		echo '<link>'.$RSS_DLINK.'?id='.(string)$i['id'].'</link>';
 		echo '<description><![CDATA[<a href="'.$RSS_DLINK.'?id='.(string)$i['id'].'">'.$title.'</a>]]></description>';
 		echo '<pubDate>'.gmdate(DATE_RSS, (int)$i['time']).'</pubDate>';
 		echo '<guid isPermaLink="false">'.$RSS_DLINK.'?id='.(string)$i['id'].'</guid>';
