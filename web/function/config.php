@@ -7,6 +7,9 @@
 $DB_HOST='localhost';
 //Make sure MySQL is running at default port 3306. Or you have to edit sqllink.php
 
+//You can use existing database for this program as long as there's no table called steamdata in the database.
+//The python code will automatically generate the table.
+//in order to make PHP work, you should first run the python crawler
 $DB_NAME='steam';
 
 //Database Username
