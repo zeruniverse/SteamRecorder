@@ -9,7 +9,7 @@ import re
 checkFrequency = 180
 dbhost = 'localhost'
 dbname = 'steam'
-dbuser = 'steam'
+dbuser = 'root'
 dbpass = '123456'
 geturl = 'https://steamcommunity.com/id/zzy8200/'
 #check every k seconds

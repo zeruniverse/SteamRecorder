@@ -1,0 +1,23 @@
+language: python
+python:
+  - '2.7'
+  - '2.6'
+addons:
+  mariadb: '10.0'
+before_script:
+  - pip install MySQL-python
+  - mysql -e "use mysql; update user set password=PASSWORD('123456') where User='root'; flush privileges;" -uroot
+  - mysql -e "CREATE DATABASE steam;" -uroot -p123456
+script: 
+  - cd crawler
+  - nohup python crawler.py > a.log&
+  - sleep 500s
+  - echo 'still waiting'
+  - sleep 500s
+  - killall python
+  - cat qbot.log
+  - cat log.log
+after_script:
+  - mysql -e "show databases;" -uroot -p123456
+  - mysql -e "use steam; show tables;" -uroot -p123456
+  - mysql -e "use steam; select * from steamdata;" -uroot -p123456
