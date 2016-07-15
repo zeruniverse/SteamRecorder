@@ -24,6 +24,9 @@ $STOP_C='Filled up with the sense of guilty, Jeffery stops playing %s, he should
 //RSS TITLE
 $RSS_TITLE='Jeffery\'s Steam Recorder';
 
-//RSS link
-$RSS_LINK = 'http://steamcommunity.com/id/zzy8200/'
+//RSS link for channel (Feed URL)
+$RSS_LINK = 'http://steamcommunity.com/id/zzy8200/';
+
+//RSS DETAIL LINK path (Path to details.php)
+$RSS_DLINK = 'http://rsssteam.jeffery.cc/details.php';
 ?>

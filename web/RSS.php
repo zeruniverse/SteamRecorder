@@ -5,7 +5,7 @@ require_once("function/sqllink.php");
 $link=sqllink();
 if(!$link) {die("can't connect to database");}
 ?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
 
 <channel>
   <title><?php echo $RSS_TITLE;?></title>
@@ -45,9 +45,9 @@ if(!$link) {die("can't connect to database");}
 		}
 		echo '<title>'.$title.'</title>';
 		echo '<link>'.$RSS_LINK.'</link>';
-		echo '<description>'.$title.'</description>';
+		echo '<description><![CDATA[<a href="'.$RSS_DLINK.'?id='.(string)$i['id'].'">'.$title.'</a>]]></description>';
 		echo '<pubDate>'.gmdate(DATE_RSS, (int)$i['time']).'</pubDate>';
-		echo '<guid isPermaLink="false">'.(string)$i['id'].'</guid>';
+		echo '<guid isPermaLink="false">'.$RSS_DLINK.'?id='.(string)$i['id'].'</guid>';
 		echo '</item>';
 	}
 ?>
