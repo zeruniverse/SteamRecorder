@@ -2,10 +2,11 @@ SteamRecorder
 ========================
 [![Build Status](https://travis-ci.org/zeruniverse/SteamRecorder.svg?branch=master)](https://travis-ci.org/zeruniverse/SteamRecorder)
 ![Release](https://img.shields.io/github/release/zeruniverse/SteamRecorder.svg)
-![Environment](https://img.shields.io/badge/python-2.6, 2.7-blue.svg)
+![Environment](https://img.shields.io/badge/python-2.6%2C%202.7-blue.svg)
 ![Environment](https://img.shields.io/badge/PHP-5.2+-blue.svg)
 ![License](https://img.shields.io/github/license/zeruniverse/SteamRecorder.svg)  
-I use this to record hours I wasted on Steam, so I know how my life is ruined.
+  
+Record hours wasted on Steam, so I know how my life is ruined.
 
 # Version  
 v0.1  
